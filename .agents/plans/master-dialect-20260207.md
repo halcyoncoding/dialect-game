@@ -54,8 +54,8 @@
 | 4 | Player Lobby & Networking | **DONE** | `04-player-lobby-20260207.md` | #1, #2 | Medium | P0 |
 | 5 | Deck Engine & Card System | **DONE** | `05-deck-engine-20260207.md` | #2, #3 | Medium | P0 |
 | 6 | Host Admin Panel | **DONE** | `06-host-admin-20260207.md` | #4, #5 | Medium | P0 |
-| 7 | Tableau & Card Interaction | pending | `07-tableau-cards-20260207.md` | #5, #6 | High | P0 |
-| 8 | Game Flow & Turn Management | pending | `08-game-flow-20260207.md` | #7 | Medium | P0 |
+| 7 | Tableau & Card Interaction | **DONE** | `07-tableau-cards-20260207.md` | #5, #6 | High | P0 |
+| 8 | Game Flow & Turn Management | **DONE** | `08-game-flow-20260207.md` | #7 | Medium | P0 |
 | 9 | Phonetic Keyboard & Dialect Dictionary | pending | `09-keyboard-dictionary-20260207.md` | #7, #8 | High | P1 |
 | 10 | Recovery & Offline Mode | pending | `10-recovery-offline-20260207.md` | #2 | Medium | P1 |
 | 11 | Visual Polish & Theming | pending | `11-visual-polish-20260207.md` | #8, #9 | Low | P2 |
