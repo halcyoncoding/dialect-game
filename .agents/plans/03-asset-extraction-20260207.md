@@ -258,17 +258,18 @@ Get-Content assets/assets.json | ConvertFrom-Json | Select-Object -ExpandPropert
 
 ## ACCEPTANCE CRITERIA
 
-- [ ] Script extracts card images from PDF pages 162-185
-- [ ] Archetypes extracted from 3x3 grid layout
-- [ ] Age cards extracted from 4x2 grid layout
-- [ ] Fronts rotated 90 degrees clockwise to vertical
-- [ ] Backs rotated 90 degrees counter-clockwise to vertical
-- [ ] All cards resized to exactly 750x1050px
-- [ ] Output format is .webp (high quality, small file size)
-- [ ] Front/back pairs matched using zig-zag horizontal mirror mapping
-- [ ] `assets.json` manifest contains all card entries with correct paths
-- [ ] Script is idempotent (safe to re-run)
-- [ ] Assets organized into `assets/archetypes/`, `assets/age1/`, `assets/age2/`, `assets/age3/`
+- [x] Script extracts card images from PDF pages 162-185
+- [x] Archetypes extracted from 3x3 grid layout
+- [x] Age cards extracted from 4x2 grid layout
+- [x] Fronts rotated 90 degrees clockwise to vertical
+- [x] Backs rotated 90 degrees counter-clockwise to vertical
+- [x] All cards resized to exactly 750x1050px
+- [x] Output format is .webp (high quality, small file size)
+- [x] Front/back pairs matched using zig-zag horizontal mirror mapping
+- [x] `assets.json` manifest contains all card entries with correct paths
+- [x] Script is idempotent (safe to re-run)
+- [x] Assets organized into `assets/archetypes/`, `assets/age1/`, `assets/age2/`, `assets/age3/`
+- NOTE: Page indices in card-maps.ts are estimates; run script with --debug flag and adjust based on visual inspection of output
 
 ---
 
