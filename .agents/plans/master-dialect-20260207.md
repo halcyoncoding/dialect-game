@@ -51,7 +51,7 @@
 | 1 | Project Scaffolding & Dev Environment | **DONE** | `01-scaffolding-20260207.md` | -- | Low | P0 |
 | 2 | Master State Engine & Socket.io Backbone | **DONE** | `02-state-engine-20260207.md` | #1 | High | P0 |
 | 3 | Asset Extraction Script | **DONE** | `03-asset-extraction-20260207.md` | #1 | Medium | P0 |
-| 4 | Player Lobby & Networking | pending | `04-player-lobby-20260207.md` | #1, #2 | Medium | P0 |
+| 4 | Player Lobby & Networking | **DONE** | `04-player-lobby-20260207.md` | #1, #2 | Medium | P0 |
 | 5 | Deck Engine & Card System | pending | `05-deck-engine-20260207.md` | #2, #3 | Medium | P0 |
 | 6 | Host Admin Panel | pending | `06-host-admin-20260207.md` | #4, #5 | Medium | P0 |
 | 7 | Tableau & Card Interaction | pending | `07-tableau-cards-20260207.md` | #5, #6 | High | P0 |

@@ -314,15 +314,15 @@ npm run dev
 
 ## ACCEPTANCE CRITERIA
 
-- [ ] Players can enter a display name and choose a color avatar
-- [ ] Host sees pending players and can approve or reject them
-- [ ] Duplicate names are prevented (case-insensitive)
-- [ ] Session can be locked/unlocked by Host
-- [ ] Locked sessions reject new join attempts with a message
-- [ ] Player names are persisted in `globalState.players`
-- [ ] Browser refresh reconnects via sessionStorage ID
-- [ ] App routes based on session phase (lobby → setup → playing)
-- [ ] UI follows Feather brand guide (Orange CTAs, Storm inputs, Inter/Poppins fonts)
+- [x] Players can enter a display name and choose a color avatar
+- [x] Host sees pending players and can approve or reject them
+- [x] Duplicate names are prevented (case-insensitive)
+- [x] Session can be locked/unlocked by Host
+- [x] Locked sessions reject new join attempts with a message
+- [x] Player names are persisted in `globalState.players`
+- [x] Browser refresh reconnects via sessionStorage ID
+- [x] App routes based on session phase (lobby → setup → playing)
+- [x] UI follows Feather brand guide (Orange CTAs, Storm inputs, Inter/Poppins fonts)
 
 ---
 

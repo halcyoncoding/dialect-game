@@ -2,6 +2,15 @@ import { Server, Socket } from 'socket.io';
 import { v4 as uuidv4 } from 'uuid';
 import { getState, applyAction, undo, redo } from '../state.js';
 import type { GameAction, GameState, Player } from '../types.js';
+import {
+  handleJoinRequest,
+  handleApprovePlayer,
+  handleRejectPlayer,
+  handleLockSession,
+  handleUnlockSession,
+  handleReconnect,
+  handleStartGame,
+} from './lobby.js';
 
 // ─────────────────────── SESSION TOKEN ────────────────────────────
 
@@ -93,6 +102,36 @@ export function handleConnection(io: Server, socket: Socket): void {
   // Send current state to newly connected client on connection
   const currentState = getState();
   socket.emit('state:update', currentState);
+
+  // ── Lobby Events ──────────────────────────────────────────────
+
+  socket.on('lobby:joinRequest', (data: { name: string; color: string; sessionId: string }) => {
+    handleJoinRequest(io, socket, data);
+  });
+
+  socket.on('lobby:approve', (data: { playerId: string }) => {
+    handleApprovePlayer(io, socket, data.playerId);
+  });
+
+  socket.on('lobby:reject', (data: { playerId: string }) => {
+    handleRejectPlayer(io, socket, data.playerId);
+  });
+
+  socket.on('lobby:lock', () => {
+    handleLockSession(io, socket);
+  });
+
+  socket.on('lobby:unlock', () => {
+    handleUnlockSession(io, socket);
+  });
+
+  socket.on('lobby:reconnect', (data: { sessionId: string }) => {
+    handleReconnect(io, socket, data.sessionId);
+  });
+
+  socket.on('lobby:startGame', () => {
+    handleStartGame(io, socket);
+  });
 
   // ── Action Dispatch ──────────────────────────────────────────
 
