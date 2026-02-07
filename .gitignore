@@ -1,0 +1,53 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+*.tsbuildinfo
+
+# Environment
+.env
+.env.*
+.venv
+
+# IDE
+.vscode
+.playwright-mcp
+
+# Python
+__pycache__
+.pytest_cache
+.ruff_cache
+
+# Source PDF (large binary, not project code)
+Dialect.pdf
+
+# Extracted card assets (large binary files — regenerate with npm run extract-assets)
+assets/age1/
+assets/age2/
+assets/age3/
+assets/archetypes/
+assets/backdrops/
+assets/assets.json
+
+# Runtime state backups
+state-backup*.json
+
+# Agentic workflow infrastructure (local tooling, not project code)
+.agents/reports/
+.agents/temp/
+.agents/README.md
+.cursor/
+.claude/
+CLAUDE.md
+how_to_use_loop.md
+PIVLoopDiagram.png
+Top1%AgenticEngineering.png
+GETTING_STARTED.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Reference repos (read-only clones)
+.reference/
