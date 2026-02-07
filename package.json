@@ -1,0 +1,19 @@
+{
+  "name": "dialect-game",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Digital tabletop adaptation of the Dialect storytelling game",
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,green \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm run dev",
+    "build": "cd client && npm run build && cd ../server && npm run build",
+    "start": "cd server && npm start",
+    "extract-assets": "cd scripts && npx tsx extract-assets.ts",
+    "install:all": "npm install && cd server && npm install && cd ../client && npm install"
+  },
+  "devDependencies": {
+    "concurrently": "^9.2.1",
+    "typescript": "^5.7.3"
+  }
+}

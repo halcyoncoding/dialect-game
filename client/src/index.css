@@ -1,0 +1,19 @@
+@import "tailwindcss";
+
+/* Feather Design System - Base Theme Tokens */
+@theme {
+  --font-heading: 'Poppins', sans-serif;
+  --font-body: 'Inter', sans-serif;
+
+  --color-orange: #FF9A0D;
+  --color-storm-100: #F0F4F8;
+  --color-storm-200: #D9E2EC;
+  --color-storm-300: #BCCCDC;
+  --color-storm-500: #627D98;
+  --color-storm-700: #334E68;
+  --color-storm-900: #102A43;
+  --color-spruce: #0A6C5C;
+  --color-iron: #9B6B6B;
+  --color-oxide: #C0392B;
+  --color-amber: #B8860B;
+}

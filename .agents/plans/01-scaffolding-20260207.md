@@ -559,16 +559,16 @@ npx vite
 
 ## ACCEPTANCE CRITERIA
 
-- [ ] Root `package.json` exists with `dev`, `build`, `start`, `install:all` scripts
-- [ ] Server starts on port 3000 with Express + Socket.io
-- [ ] Server serves static files from `/public` and `/assets` directories
-- [ ] Server blocks path traversal attempts
-- [ ] Client starts on port 5173 with Vite + React + Tailwind
-- [ ] Client proxies `/socket.io` and `/api` to server in dev mode
-- [ ] TypeScript compiles without errors in both server and client
-- [ ] Tailwind CSS v4 loads and custom theme tokens are available
-- [ ] Google Fonts (Poppins + Inter) load correctly
-- [ ] `npm run dev` from root starts both server and client concurrently
+- [x] Root `package.json` exists with `dev`, `build`, `start`, `install:all` scripts
+- [x] Server starts on port 3000 with Express + Socket.io
+- [x] Server serves static files from `/public` and `/assets` directories
+- [x] Server blocks path traversal attempts
+- [x] Client starts on port 5173 with Vite + React + Tailwind
+- [x] Client proxies `/socket.io` and `/api` to server in dev mode
+- [x] TypeScript compiles without errors in both server and client
+- [x] Tailwind CSS v4 loads and custom theme tokens are available
+- [x] Google Fonts (Poppins + Inter) load correctly
+- [x] `npm run dev` from root starts both server and client concurrently
 
 ---
 

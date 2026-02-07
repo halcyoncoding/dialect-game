@@ -48,7 +48,7 @@
 
 | # | Feature | Status | Plan File | Depends On | Complexity | Priority |
 |---|---------|--------|-----------|------------|------------|----------|
-| 1 | Project Scaffolding & Dev Environment | pending | `01-scaffolding-20260207.md` | -- | Low | P0 |
+| 1 | Project Scaffolding & Dev Environment | **DONE** | `01-scaffolding-20260207.md` | -- | Low | P0 |
 | 2 | Master State Engine & Socket.io Backbone | pending | `02-state-engine-20260207.md` | #1 | High | P0 |
 | 3 | Asset Extraction Script | pending | `03-asset-extraction-20260207.md` | #1 | Medium | P0 |
 | 4 | Player Lobby & Networking | pending | `04-player-lobby-20260207.md` | #1, #2 | Medium | P0 |
