@@ -1,7 +1,8 @@
 import { GameProvider } from './contexts/GameContext';
 import { useGameState } from './hooks/useGameState';
 import Lobby from './components/Lobby';
-import { useRef, useEffect, useState } from 'react';
+import HostAdmin from './components/HostAdmin';
+import { useEffect, useState } from 'react';
 import { createSocket } from './socket';
 import type { Socket } from 'socket.io-client';
 
@@ -44,17 +45,20 @@ const PhaseRouter = ({ socket }: { socket: Socket | null }) => {
     case 'playing':
     case 'legacy':
       return (
-        <div className="min-h-screen bg-storm-900 text-storm-100 font-body flex items-center justify-center">
-          <div className="text-center">
-            <h1 className="text-4xl font-heading font-bold text-orange mb-4">
-              Dialect
-            </h1>
-            <p className="text-storm-300 text-lg">
-              Game View — {state.session.phase} phase (Coming Soon)
-            </p>
-            <p className="text-storm-500 text-sm mt-2">
-              State v{state.version} — {state.players.length} players — Age {state.session.age}
-            </p>
+        <div className="min-h-screen bg-storm-900 text-storm-100 font-body">
+          <HostAdmin />
+          <div className="flex items-center justify-center min-h-screen">
+            <div className="text-center">
+              <h1 className="text-4xl font-heading font-bold text-orange mb-4">
+                Dialect
+              </h1>
+              <p className="text-storm-300 text-lg">
+                Game View — {state.session.phase} phase (Coming Soon)
+              </p>
+              <p className="text-storm-500 text-sm mt-2">
+                State v{state.version} — {state.players.length} players — Age {state.session.age}
+              </p>
+            </div>
           </div>
         </div>
       );
