@@ -429,18 +429,18 @@ npm run dev
 
 ## ACCEPTANCE CRITERIA
 
-- [ ] `GameState` type matches PRD data model (Section 5)
-- [ ] State engine creates valid initial state
-- [ ] `applyAction` validates before mutating
-- [ ] History maintains up to 30 `structuredClone` snapshots
-- [ ] Undo restores previous state and broadcasts to all clients
-- [ ] Redo restores undone state (cleared on new action)
-- [ ] Socket.io connection requires valid session token
-- [ ] Server broadcasts full state after every mutation
-- [ ] Client receives state updates and renders via React Context
-- [ ] Player hands are private (other players see card counts only)
-- [ ] Reconnecting client receives latest state
-- [ ] TypeScript compiles without errors on both server and client
+- [x] `GameState` type matches PRD data model (Section 5)
+- [x] State engine creates valid initial state
+- [x] `applyAction` validates before mutating
+- [x] History maintains up to 30 `structuredClone` snapshots
+- [x] Undo restores previous state and broadcasts to all clients
+- [x] Redo restores undone state (cleared on new action)
+- [x] Socket.io connection requires valid session token
+- [x] Server broadcasts full state after every mutation
+- [x] Client receives state updates and renders via React Context
+- [x] Player hands are private (other players see card counts only)
+- [x] Reconnecting client receives latest state
+- [x] TypeScript compiles without errors on both server and client
 
 ---
 

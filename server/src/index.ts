@@ -4,6 +4,8 @@ import { Server } from 'socket.io';
 import { networkInterfaces } from 'os';
 import { fileURLToPath } from 'url';
 import path from 'path';
+import { handleConnection, getSessionToken } from './handlers/connection.js';
+import { getState } from './state.js';
 
 // ─────────────────────────── CONSTANTS ───────────────────────────
 
@@ -16,7 +18,7 @@ const PORT = parseInt(process.env.PORT || '3000', 10);
 
 /**
  * Middleware that blocks path traversal attempts on static file routes.
- * Only allows access to /public and /assets directories.
+ * Only allows access to the specified directory.
  *
  * @param allowedDir - The resolved absolute path of the allowed directory
  * @returns Express middleware function
@@ -59,20 +61,30 @@ const assetsDir = path.join(PROJECT_ROOT, 'assets');
 app.use('/public', guardPathTraversal(publicDir), express.static(publicDir));
 app.use('/assets', guardPathTraversal(assetsDir), express.static(assetsDir));
 
-// ─────────────────────── HEALTH CHECK ────────────────────────────
+// ─────────────────────── API ENDPOINTS ───────────────────────────
 
 app.get('/api/health', (_req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
 });
 
+// Returns the session token — used by the Host's browser to authenticate
+app.get('/api/session', (_req, res) => {
+  res.json({ token: getSessionToken() });
+});
+
+// Returns network info for the join link
+app.get('/api/network-info', (_req, res) => {
+  res.json({
+    ip: getLocalIp(),
+    port: PORT,
+    url: `http://${getLocalIp()}:${PORT}`,
+  });
+});
+
 // ──────────────────── SOCKET.IO CONNECTIONS ──────────────────────
 
 io.on('connection', (socket) => {
-  console.log(`[Socket] Client connected: ${socket.id}`);
-
-  socket.on('disconnect', () => {
-    console.log(`[Socket] Client disconnected: ${socket.id}`);
-  });
+  handleConnection(io, socket);
 });
 
 // ─────────────────── LOCAL IP DETECTION ──────────────────────────
@@ -101,9 +113,11 @@ const getLocalIp = (): string => {
 
 httpServer.listen(PORT, () => {
   const localIp = getLocalIp();
+  const token = getSessionToken();
   console.log(`\n  Dialect Digital Tableau — Server`);
   console.log(`  ─────────────────────────────────`);
   console.log(`  Local:   http://localhost:${PORT}`);
   console.log(`  Network: http://${localIp}:${PORT}`);
+  console.log(`  Session: ${token}`);
   console.log(`\n  Share the Network URL with players to join.\n`);
 });
